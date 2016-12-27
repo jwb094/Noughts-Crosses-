@@ -86,65 +86,53 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         checkRows();
       }
-
-
-      // for (index = 0; index <= 2; index++) {
-      //   console.log(index);
-      //   if (arrayColumn(tablerow, index).toString() === CrossesWinningCombo.toString()) {
-      //     Player1Output();
-      //   } else if (arrayColumn(tablerow, index).toString() === NoughtsWinningCombo.toString()) {
-      //     Player2Output();
-      //   } else {  /*checkDiagonal()*/;
-      //     checkRows();
-      //   }
-      //   //});
-      // }
     }
+  }
 
-    function checkRows() {
-      for (i = 0; i <= tablerow.length; i++) {
-        var rowvalue = tablerow[i];
-        //console.log(rowvalue);
-        if (rowvalue.toString() === CrossesWinningCombo.toString()) {
-          Player1Output();
-        } else if (rowvalue.toString() === NoughtsWinningCombo.toString()) {
-          Player2Output();
-        } else {
-          null;
-        }
-
-
+  function checkRows() {
+    for (i = 0; i <= tablerow.length; i++) {
+      var rowvalue = tablerow[i];
+      //console.log(rowvalue);
+      if (rowvalue.toString() === CrossesWinningCombo.toString()) {
+        Player1Output();
+      } else if (rowvalue.toString() === NoughtsWinningCombo.toString()) {
+        Player2Output();
+      } else {
+        null;
       }
-    }
 
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //A function that perform actions if the Player1 wins
-    function Player1Output() {
-      $("#resultmessage").html("Player1 wins");
-      player1ScoreCount++;
-      let theScore = document.getElementById("Player1count").innerHTML = player1ScoreCount;
-      console.log(player1ScoreCount);
-      resetTheBoard();
     }
-    //A function that perform actions if the player2 wins
-    function Player2Output() {
-      $("#resultmessage").html("Player2 wins");
-      player2ScoreCount++;
-      let theScore = document.getElementById("Player2count").innerHTML = player2ScoreCount;
-      console.log(player2ScoreCount);
-      resetTheBoard();
-    }
-    //function if the match is a draw
-    function matchIsADraw() {
-      $("#resultmessage").html("its a draw");
-      $("#NandC tbody tr td").html("");
-      resetTheBoard();
-    }
-    //function to reset the board
-    function resetTheBoard() {
-      $("#NandC tbody tr td").html("");
-      counter = 0;
-      console.log(counter);
-    }
-  });
+  }
+
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //A function that perform actions if the Player1 wins
+  function Player1Output() {
+    $("#resultmessage").html("Player1 wins");
+    player1ScoreCount++;
+    let theScore = document.getElementById("Player1count").innerHTML = player1ScoreCount;
+    console.log(player1ScoreCount);
+    resetTheBoard();
+  }
+  //A function that perform actions if the player2 wins
+  function Player2Output() {
+    $("#resultmessage").html("Player2 wins");
+    player2ScoreCount++;
+    let theScore = document.getElementById("Player2count").innerHTML = player2ScoreCount;
+    console.log(player2ScoreCount);
+    resetTheBoard();
+  }
+  //function if the match is a draw
+  function matchIsADraw() {
+    $("#resultmessage").html("its a draw");
+    $("#NandC tbody tr td").html("");
+    resetTheBoard();
+  }
+  //function to reset the board
+  function resetTheBoard() {
+    $("#NandC tbody tr td").html("");
+    counter = 0;
+    console.log(counter);
+  }
+});
