@@ -1,4 +1,27 @@
 //ES6Way
+
+$(() => window.rps = new TicTacToe());
+
+class TicTacToe {
+    constructor() {
+      // winning combo of Noughts & Crosses
+      this.NoughtsWinning = ['O','O','O'];
+      this.CrossesWinningCombo = ['X','X','X'];
+
+      //Player score and computer score which starts at zero
+      this.player1ScoreCount = 0;
+      this.player2ScoreCount = 0;
+      this.player2 = false;
+      this.player1 = true;
+      this.currentplayer = player1;
+      
+      this.counter = 0;
+      this.result;
+      this.theButtons = $('#NandC');
+      this.tablerow;
+
+    }
+}
 document.addEventListener('DOMContentLoaded', function () {
 
   // winning combo of Noughts & Crosses
