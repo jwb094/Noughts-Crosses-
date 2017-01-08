@@ -1,3 +1,4 @@
+//ES6Way
 document.addEventListener('DOMContentLoaded', function () {
 
   // winning combo of Noughts & Crosses
