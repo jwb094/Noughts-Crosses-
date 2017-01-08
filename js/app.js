@@ -2,13 +2,14 @@ $(() => window.onload = new TicTacToe());
 
 class TicTacToe {
   constructor() {
-     this.theButtons = $('#NandC');
 
     // winning combo of Noughts & Crosses
-    this.NoughtsWinning = ['O', 'O', 'O'];
+    this.NoughtsWinningCombo = ['O', 'O', 'O'];
     this.CrossesWinningCombo = ['X', 'X', 'X'];
 
     //Player score and computer score which starts at zero
+
+     this.theButtons = $('#NandC');
     this.player1ScoreCount = 0;
     this.player2ScoreCount = 0;
     this.player2 = false;
@@ -58,8 +59,8 @@ class TicTacToe {
 checkDiagonal() {
    this.tabledia1 = [this.tablerow[0][0], this.tablerow[1][1], this.tablerow[2][2]];
    this.tabledia2 = [this.tablerow[0][2], this.tablerow[1][1], this.tablerow[2][0]];
-   //console.log(tabledia1);
-   console.log(this.NoughtsWinningCombo.toString());
+   //console.log(this.tabledia1);
+    //console.log(this.NoughtsWinningCombo);
    this.tabledia1.toString() === this.CrossesWinningCombo.toString() ? this.Player1Output() :
    this.tabledia2.toString() === this.CrossesWinningCombo.toString() ? this.Player1Output() :
    this.tabledia1.toString() === this.NoughtsWinningCombo.toString() ? this.Player2Output() :
@@ -128,43 +129,3 @@ checkDiagonal() {
 
 
 }
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// //A function that perform actions if the Player1 wins
-// function Player1Output() {
-//   $("#resultmessage").html("Player1 wins");
-//   player1ScoreCount++;
-//   let theScore = document.getElementById("Player1count").innerHTML = player1ScoreCount;
-//   console.log(player1ScoreCount);
-//   resetTheBoard();
-// }
-// //A function that perform actions if the player2 wins
-// function Player2Output() {
-//   $("#resultmessage").html("Player2 wins");
-//   player2ScoreCount++;
-//   let theScore = document.getElementById("Player2count").innerHTML = player2ScoreCount;
-//   console.log(player2ScoreCount);
-//   resetTheBoard();
-// }
-// //function if the match is a draw
-// function matchIsADraw() {
-//   $("#resultmessage").html("its a draw");
-//   $("#NandC tbody tr td").html("");
-//   resetTheBoard();
-// }
-// //function to reset the board
-// function resetTheBoard() {
-//   $("#NandC tbody tr td").html("");
-//   counter = 0;
-//   console.log(counter);
-// }
-// });*/
